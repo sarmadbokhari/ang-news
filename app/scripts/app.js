@@ -4,8 +4,9 @@ var app = angular.module('angNewsApp', [
     'ngCookies',
     'ngResource',
     'ngSanitize',
-    'ngRoute'
-  ]);
+    'ngRoute',
+    'firebase'
+  ])
 app.config(function ($routeProvider) {
     $routeProvider
       .when('/', {
@@ -16,3 +17,4 @@ app.config(function ($routeProvider) {
         redirectTo: '/'
       });
   });
+app.constant('FIREBASE_URL', 'https://social-news-site.firebaseio.com/');
