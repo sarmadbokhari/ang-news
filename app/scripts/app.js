@@ -7,7 +7,7 @@ var app = angular.module('angNewsApp', [
     'ngRoute',
     'firebase'
   ])
-app.config(function ($routeProvider) {
+.config(function ($routeProvider) {
     $routeProvider
       .when('/', {
         templateUrl: 'views/posts.html',
@@ -16,5 +16,5 @@ app.config(function ($routeProvider) {
       .otherwise({
         redirectTo: '/'
       });
-  });
-app.constant('FIREBASE_URL', 'https://social-news-site.firebaseio.com/');
+  })
+.constant('FIREBASE_URL', 'https://social-news-site.firebaseio.com/');
