@@ -21,14 +21,12 @@ var app = angular.module('angNewsApp', [
         templateUrl: 'views/register.html',
         controller: 'AuthCtrl'
       })
-      .when('/login'), {
+      .when('/login', {
         templateUrl: 'views/login.html',
         controller: 'AuthCtrl'
-      }
+      })
       .otherwise({
         redirectTo: '/'
-      });
+      })
   })
 .constant('FIREBASE_URL', 'https://social-news-site.firebaseio.com/');
-
-//git issues!
