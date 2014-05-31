@@ -30,3 +30,5 @@ var app = angular.module('angNewsApp', [
       });
   })
 .constant('FIREBASE_URL', 'https://social-news-site.firebaseio.com/');
+
+//git issues!
