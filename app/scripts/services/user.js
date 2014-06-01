@@ -13,8 +13,20 @@ app.factory('User', function($firebase, FIREBASE_URL, Auth){
         $priority: authUser.uid
       };
 
-      users.$save(username);
+      users.$save(username).then(function(){
+        setCurrentUser(username);
+      });
+    },
+
+    findByUserName: function(username){
+      if(username){
+        return users.$child(username);
+      }
     }
+  };
+
+  function setCurrentUser(username){
+    $rootScope.currentUser = User.findByUserName(username);
   };
 
   return User;
