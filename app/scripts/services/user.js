@@ -23,6 +23,14 @@ app.factory('User', function($firebase, FIREBASE_URL, Auth){
         return users.$child(username);
       }
     },
+
+    getCurrent: function(){
+      return $rootScope.currentUser;
+    },
+
+    signedIn: function(){
+      return $rootScope.currentUser !== undefined;
+    }
   };
 
   function setCurrentUser(username){
