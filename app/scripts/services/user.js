@@ -22,7 +22,7 @@ app.factory('User', function($firebase, FIREBASE_URL, Auth){
       if(username){
         return users.$child(username);
       }
-    }
+    },
   };
 
   function setCurrentUser(username){
@@ -35,6 +35,10 @@ app.factory('User', function($firebase, FIREBASE_URL, Auth){
     query.$on('loaded', function(){
       setCurrentUser(query.$getIndex()[0]);
     });
+  });
+
+  $rootScope.$on('$firebaseSimpleLogin:logout', function(){
+    delete $rootScope.currentUser;
   });
 
   return User;
