@@ -26,7 +26,17 @@ app.factory('Post', function($firebase, FIREBASE_URL, User){
         return posts.$child(postId);
       },
       delete: function(postId){
-        return posts.$remove(postId);
+        if (User.signedIn()) {
+          var post = Post.find(postId);
+
+          post.$on('loaded', function(){
+            var user = User.findByUsername(post.owner);
+
+            posts.$remove(postId).then(function(){
+              user.$child('posts').$remove(postId);
+            });
+          });
+        }
       }
     };
 
