@@ -25,7 +25,20 @@
 
     <ul class="nav navbar-nav navbar-right" ng-show="signedIn()">
       <li>
+        <a href="#/users/{{ currentUser.username }}">
+          <img ng-src="http://gravatar.com/avatar/{{ currentUser.md5_hash }}" class="nav-pic" />
+          {{ currentUser.username }}
+        </a>
+      <li>
         <a href="#" ng-click="logout()">Logout</a>
+      </li>
+    </ul>
+    <ul class="nav navbar-nav navbar-right" ng-hide="signedIn()">
+      <li>
+        <a href="#/register">Register</a>
+      </li>
+      <li>
+        <a href="#/login">Login</a>
       </li>
     </ul>
 
