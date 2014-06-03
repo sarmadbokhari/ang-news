@@ -13,7 +13,7 @@ app.factory('Post', function($firebase, FIREBASE_URL, User){
 
           post.owner = user.username;
 
-          return posts.$add(post).then(function(ref){
+          posts.$add(post).then(function(ref){
             var postId = ref.name();
 
             user.$child('posts').$child(postId).$set(postId);
@@ -30,7 +30,7 @@ app.factory('Post', function($firebase, FIREBASE_URL, User){
           var post = Post.find(postId);
 
           post.$on('loaded', function(){
-            var user = User.findByUsername(post.owner);
+            var user = User.findByUserName(post.owner);
 
             posts.$remove(postId).then(function(){
               user.$child('posts').$remove(postId);
