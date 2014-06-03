@@ -8,7 +8,7 @@ app.controller('PostViewCtrl', function($scope, $routeParams, Post){
     $scope.comment = '';
   };
 
-  $scope.removeComment = function(){
+  $scope.removeComment = function(comment, commentId){
     Post.deleteComment($scope.post, comment, commentId)
   }
 
