@@ -27,6 +27,9 @@
 
 
     <div ng-include="'views/nav.html'"></div>
+
+    <center><p ng-hide="signedIn()"><a href="#/login" class="btn btn-primary">Sign in</a> or <a href="#/register" class="btn btn-primary">Register</a> to post links and vote on posts</p></center>
+
     <div class="container" ng-view=""></div>
 
     <div class="footer" ng-include="'views/footer.html'"></div>
