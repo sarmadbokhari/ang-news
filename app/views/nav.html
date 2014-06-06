@@ -38,7 +38,7 @@
 
 <div class="container" ng-controller="NavCtrl">
   <p ng-show="signedIn()">Post a link:</h1>
-  <p ng-hide="signedIn()">Sign in to post a link</h1>
+  <p ng-hide="signedIn()">Sign in to post links and vote on posts</h1>
   <form class="navbar-form navbar-left" role="search" ng-submit="submitPost()" ng-show="signedIn()">
     <div class="form-group">
       <input type="text" class="form-control" placeholder="Title" ng-model="post.title">
