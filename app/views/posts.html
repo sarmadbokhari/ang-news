@@ -1,7 +1,7 @@
 <div class="container posts-page">
 
   <div class="post row" ng-repeat="(postId, post) in posts">
-    <div class="col-xs-1">
+    <div class="col-xs-1" ng-show="signedIn()">
       <div class="vote up"><span ng-hide="downVoted(post)" ng-click="upVotePost(postId, upVoted(post))">▲</span></div>
 
       <div class="vote down"><span ng-hide="upVoted(post)" ng-click="downVotePost(postId, downVoted(post))">▼</span></div>
