@@ -10,7 +10,7 @@
     <div class="col-md-9 col-xs-11">
 
       <div class="info">
-        <a href="{{ post.url }}">
+        <a href="{{ post.url }}" target="_blank">
           {{ post.title }}
           <span class="url">({{ post.url | hostnameFromUrl }})</span>
         </a>
@@ -38,7 +38,7 @@
 
   <div class="cmt-form">
     <div ng-hide="signedIn()">
-      <p><a href="#/login">Sign in</a> to post a comment</p>
+      <p><a href="#/login" class="btn btn-primary">Sign in</a> to post a comment</p>
     </div>
 
     <form ng-show="signedIn()">
@@ -47,10 +47,6 @@
     </form>
   </div>
 
-</div>
-
-<div>
-  <a href="{{ post.url }}" target="_blank">{{ post.title }}</a>
 </div>
 
 <a href="#/posts">Back to Posts</a>
